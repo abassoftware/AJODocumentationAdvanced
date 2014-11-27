@@ -1,0 +1,81 @@
+<ABASData>
+    <RecordSet action="new" database="0" group="1">
+        <Record>
+            <Head>
+                <Field name="swd">PLANET</Field>
+                <Field name="addr">Planet Profit</Field>
+                <Field name="street">Wallstrasse 18</Field>
+                <Field name="zipCode">53547</Field>
+                <Field name="town">Dattenberg</Field>
+                <Field name="stateOfTaxOffice">DE</Field>
+                <Field name="phone">02638 55 13 61</Field>
+            </Head>
+        </Record>
+        <Record>
+            <Head>
+                <Field name="swd">MISSIONG</Field>
+                <Field name="addr">Mission G</Field>
+                <Field name="street">95, Chemin des Bateliers</Field>
+                <Field name="zipCode">61000</Field>
+                <Field name="town">Alençon</Field>
+                <Field name="stateOfTaxOffice">FR</Field>
+                <Field name="phone">02.51.38.83.52</Field>
+            </Head>
+        </Record>
+        <Record>
+            <Head>
+                <Field name="swd">NETSTARS</Field>
+                <Field name="addr">Netstars Matrix Design</Field>
+                <Field name="street">2397 Adamsville Road</Field>
+                <Field name="zipCode">78076</Field>
+                <Field name="town">Zapata</Field>
+                <Field name="stateOfTaxOffice">US</Field>
+                <Field name="phone">956-765-8622</Field>
+            </Head>
+        </Record>
+        <Record>
+            <Head>
+                <Field name="swd">LOCOST</Field>
+                <Field name="addr">Locost Accessories</Field>
+                <Field name="street">Kammelenbergstrasse 48</Field>
+                <Field name="zipCode">1966</Field>
+                <Field name="town">Fortunau</Field>
+                <Field name="stateOfTaxOffice">CH</Field>
+                <Field name="phone">027 534 98 99</Field>
+            </Head>
+        </Record>
+        <Record>
+            <Head>
+                <Field name="swd">ALLWOUNDUP</Field>
+                <Field name="addr">All Wound Up</Field>
+                <Field name="street">Charlottenstrasse 67</Field>
+                <Field name="zipCode">03012</Field>
+                <Field name="town">Cottbus</Field>
+                <Field name="stateOfTaxOffice">DE</Field>
+                <Field name="phone">0355 80 18 72</Field>
+            </Head>
+        </Record>
+        <Record>
+            <Head>
+                <Field name="swd">IDEALGARDEN</Field>
+                <Field name="addr">Ideal Garden Maintenance</Field>
+                <Field name="street">Hoheluftchaussee 84</Field>
+                <Field name="zipCode">55471</Field>
+                <Field name="town">Tiefenbach</Field>
+                <Field name="stateOfTaxOffice">DE</Field>
+                <Field name="phone">034322 97 91</Field>
+            </Head>
+        </Record>
+        <Record>
+            <Head>
+                <Field name="swd">PLANETBIZ</Field>
+                <Field name="addr">Planetbiz</Field>
+                <Field name="street">1834 Broad Street</Field>
+                <Field name="zipCode">35023</Field>
+                <Field name="town">Hueytown</Field>
+                <Field name="stateOfTaxOffice">US</Field>
+                <Field name="phone">205-497-4972</Field>
+            </Head>
+        </Record>
+    </RecordSet>
+</ABASData>
