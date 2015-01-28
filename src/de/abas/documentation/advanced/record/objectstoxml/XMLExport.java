@@ -16,10 +16,30 @@ public class XMLExport extends AbstractAjoAccess {
 		xmlExport.runClientProgram(args);
 	}
 
+	/**
+	 * Creates Field elements inside Head element.
+	 *
+	 * @param head The Head element to place the Field element in.
+	 * @param fieldName The name of the field.
+	 * @param fieldContent The content of the field.
+	 */
+	protected void createFieldElements(Element head, String fieldName,
+			String fieldContent) {
+		// creates Field element
+		Element field = new Element("Field");
+		// places Field element within Head element
+		head.addContent(field);
+		// assign attributes to Field element
+		field.setAttribute("name", fieldName);
+		// assign content to Field element
+		field.setText(fieldContent);
+	}
+
 	@Override
 	public void run(String[] args) {
 		try {
-			String xmlFile = "C:/Users/abas/Documents/XMLExport.xml";
+			String xmlFile =
+					"src/de/abas/documentation/advanced/record/objectstoxml/XMLExport.xml";
 			// creates root element ABASData
 			Element abasData = new Element("ABASData");
 			// creates XML document on the basis of the root element
@@ -54,25 +74,6 @@ public class XMLExport extends AbstractAjoAccess {
 			getDbContext().out().println(
 					"An IOException occurred: " + e.getMessage());
 		}
-	}
-
-	/**
-	 * Creates Field elements inside Head element.
-	 * 
-	 * @param head The Head element to place the Field element in.
-	 * @param fieldName The name of the field.
-	 * @param fieldContent The content of the field.
-	 */
-	protected void createFieldElements(Element head, String fieldName,
-			String fieldContent) {
-		// creates Field element
-		Element field = new Element("Field");
-		// places Field element within Head element
-		head.addContent(field);
-		// assign attributes to Field element
-		field.setAttribute("name", fieldName);
-		// assign content to Field element
-		field.setText(fieldContent);
 	}
 
 }

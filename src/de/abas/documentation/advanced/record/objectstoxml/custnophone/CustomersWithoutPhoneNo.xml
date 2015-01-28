@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ABASData>
+  <RecordSet action="update" database="0" group="1">
+    <Record id="20589">
+      <Head>
+        <Field name="swd" abasType="SWK0">TUNAK</Field>
+        <Field name="descr" abasType="GL45">TU KFT,1095  Budapest</Field>
+        <Field name="phoneNo" abasType="GL70">21 211 976 9684</Field>
+      </Head>
+    </Record>
+    <Record id="20590">
+      <Head>
+        <Field name="swd" abasType="SWK0">AUTOC</Field>
+        <Field name="descr" abasType="GL45">AU SA, 08005 Barcelona</Field>
+        <Field name="phoneNo" abasType="GL70">09961 85 41 62</Field>
+      </Head>
+    </Record>
+    <Record id="20591">
+      <Head>
+        <Field name="swd" abasType="SWK0">MAKIN</Field>
+        <Field name="descr" abasType="GL45">MA AS, 34398 Istanbul</Field>
+        <Field name="phoneNo" abasType="GL70">05582 81 52 93</Field>
+      </Head>
+    </Record>
+    <Record id="20592">
+      <Head>
+        <Field name="swd" abasType="SWK0">CESKA</Field>
+        <Field name="descr" abasType="GL45">CE SRO, 160 00 Praha</Field>
+        <Field name="phoneNo" abasType="GL70">21 211 976 9684</Field>
+      </Head>
+    </Record>
+    <Record id="20593">
+      <Head>
+        <Field name="swd" abasType="SWK0">ROMET</Field>
+        <Field name="descr" abasType="GL45">RO SRL, 200585 Craiova</Field>
+        <Field name="phoneNo" abasType="GL70">09961 85 41 62</Field>
+      </Head>
+    </Record>
+    <Record id="20599">
+      <Head>
+        <Field name="swd" abasType="SWK0">EDL</Field>
+        <Field name="descr" abasType="GL45">EDL Partner, 50123 Köln</Field>
+        <Field name="phoneNo" abasType="GL70">05582 81 52 93</Field>
+      </Head>
+    </Record>
+    <Record id="70015">
+      <Head>
+        <Field name="swd" abasType="SWK0">GOLFSTEI</Field>
+        <Field name="descr" abasType="GL45">Golf-Club Steinhuder Meer, Mardorf</Field>
+        <Field name="phoneNo" abasType="GL70">21 211 976 9684</Field>
+      </Head>
+    </Record>
+    <Record id="70020">
+      <Head>
+        <Field name="swd" abasType="SWK0">MIETSERV</Field>
+        <Field name="descr" abasType="GL45">Mietservice GmbH, Germersheim</Field>
+        <Field name="phoneNo" abasType="GL70">09961 85 41 62</Field>
+      </Head>
+    </Record>
+    <Record id="70027">
+      <Head>
+        <Field name="swd" abasType="SWK0">BAYER</Field>
+        <Field name="descr" abasType="GL45">BA AG, 80539 München</Field>
+        <Field name="phoneNo" abasType="GL70">05582 81 52 93</Field>
+      </Head>
+    </Record>
+    <Record id="70063">
+      <Head>
+        <Field name="swd" abasType="SWK0">HOIMEX</Field>
+        <Field name="descr" abasType="GL45">Hoimex, Greenmount, Auckland</Field>
+        <Field name="phoneNo" abasType="GL70">21 211 976 9684</Field>
+      </Head>
+    </Record>
+    <Record id="70077">
+      <Head>
+        <Field name="swd" abasType="SWK0">HUTSP.ZO</Field>
+        <Field name="descr" abasType="GL45">HUT Sp. z o.o., Siedlce</Field>
+        <Field name="phoneNo" abasType="GL70">09961 85 41 62</Field>
+      </Head>
+    </Record>
+    <Record id="70078">
+      <Head>
+        <Field name="swd" abasType="SWK0">JUBS.C.</Field>
+        <Field name="descr" abasType="GL45">JUB S.C., Skawina</Field>
+        <Field name="phoneNo" abasType="GL70">05582 81 52 93</Field>
+      </Head>
+    </Record>
+    <Record id="70079">
+      <Head>
+        <Field name="swd" abasType="SWK0">EXSIDES.</Field>
+        <Field name="descr" abasType="GL45">Exside S.C., Warsawa</Field>
+        <Field name="phoneNo" abasType="GL70">21 211 976 9684</Field>
+      </Head>
+    </Record>
+    <Record id="70080">
+      <Head>
+        <Field name="swd" abasType="SWK0">MATERJAL</Field>
+        <Field name="descr" abasType="GL45">Materjali AS, Warsawa</Field>
+        <Field name="phoneNo" abasType="GL70">09961 85 41 62</Field>
+      </Head>
+    </Record>
+    <Record id="70081">
+      <Head>
+        <Field name="swd" abasType="SWK0">ENBUD</Field>
+        <Field name="descr" abasType="GL45">Enbud, Wolka Lubelska</Field>
+        <Field name="phoneNo" abasType="GL70">05582 81 52 93</Field>
+      </Head>
+    </Record>
+    <Record id="70082">
+      <Head>
+        <Field name="swd" abasType="SWK0">INTERBAU</Field>
+        <Field name="descr" abasType="GL45">INTERbau Sp. z o.o., Lublin</Field>
+        <Field name="phoneNo" abasType="GL70">21 211 976 9684</Field>
+      </Head>
+    </Record>
+    <Record id="70083">
+      <Head>
+        <Field name="swd" abasType="SWK0">COMEXSP.</Field>
+        <Field name="descr" abasType="GL45">Comex Sp., Warszawa</Field>
+        <Field name="phoneNo" abasType="GL70">09961 85 41 62</Field>
+      </Head>
+    </Record>
+    <Record id="70084">
+      <Head>
+        <Field name="swd" abasType="SWK0">KRISSELM</Field>
+        <Field name="descr" abasType="GL45">Krisselmann KG, Winterthur</Field>
+        <Field name="phoneNo" abasType="GL70">05582 81 52 93</Field>
+      </Head>
+    </Record>
+    <Record id="70085">
+      <Head>
+        <Field name="swd" abasType="SWK0">MORITGMB</Field>
+        <Field name="descr" abasType="GL45">Morit GmbH, Volketswil</Field>
+        <Field name="phoneNo" abasType="GL70">21 211 976 9684</Field>
+      </Head>
+    </Record>
+    <Record id="70086">
+      <Head>
+        <Field name="swd" abasType="SWK0">RENZIAG</Field>
+        <Field name="descr" abasType="GL45">Renzi AG, Bülach</Field>
+        <Field name="phoneNo" abasType="GL70">09961 85 41 62</Field>
+      </Head>
+    </Record>
+    <Record id="70087">
+      <Head>
+        <Field name="swd" abasType="SWK0">HOFFAUSB</Field>
+        <Field name="descr" abasType="GL45">Hoff Ausbauprodukte AG, Recherswil</Field>
+        <Field name="phoneNo" abasType="GL70">05582 81 52 93</Field>
+      </Head>
+    </Record>
+    <Record id="70088">
+      <Head>
+        <Field name="swd" abasType="SWK0">B+M+C</Field>
+        <Field name="descr" abasType="GL45">B + M + C, Szombathely</Field>
+        <Field name="phoneNo" abasType="GL70">21 211 976 9684</Field>
+      </Head>
+    </Record>
+    <Record id="70089">
+      <Head>
+        <Field name="swd" abasType="SWK0">HERESKED</Field>
+        <Field name="descr" abasType="GL45">Hereskedelmi es, Solymar</Field>
+        <Field name="phoneNo" abasType="GL70">09961 85 41 62</Field>
+      </Head>
+    </Record>
+    <Record id="70090">
+      <Head>
+        <Field name="swd" abasType="SWK0">AB</Field>
+        <Field name="descr" abasType="GL45">AB, Alytus</Field>
+        <Field name="phoneNo" abasType="GL70">05582 81 52 93</Field>
+      </Head>
+    </Record>
+    <Record id="70112">
+      <Head>
+        <Field name="swd" abasType="SWK0">TUNAK</Field>
+        <Field name="descr" abasType="GL45">TU KFT,1095  Budapest</Field>
+        <Field name="phoneNo" abasType="GL70">21 211 976 9684</Field>
+      </Head>
+    </Record>
+    <Record id="70113">
+      <Head>
+        <Field name="swd" abasType="SWK0">AUTOC</Field>
+        <Field name="descr" abasType="GL45">AU SA, 08005 Barcelona</Field>
+        <Field name="phoneNo" abasType="GL70">09961 85 41 62</Field>
+      </Head>
+    </Record>
+    <Record id="70114">
+      <Head>
+        <Field name="swd" abasType="SWK0">MAKIN</Field>
+        <Field name="descr" abasType="GL45">MA AS, 34398 Istanbul</Field>
+        <Field name="phoneNo" abasType="GL70">05582 81 52 93</Field>
+      </Head>
+    </Record>
+    <Record id="70115">
+      <Head>
+        <Field name="swd" abasType="SWK0">CESKA</Field>
+        <Field name="descr" abasType="GL45">CE SRO, 160 00 Praha</Field>
+        <Field name="phoneNo" abasType="GL70">21 211 976 9684</Field>
+      </Head>
+    </Record>
+    <Record id="70116">
+      <Head>
+        <Field name="swd" abasType="SWK0">ROMET</Field>
+        <Field name="descr" abasType="GL45">RO SRL, 200585 Craiova</Field>
+        <Field name="phoneNo" abasType="GL70">09961 85 41 62</Field>
+      </Head>
+    </Record>
+    <Record id="70117">
+      <Head>
+        <Field name="swd" abasType="SWK0">EDL</Field>
+        <Field name="descr" abasType="GL45">EDL Partner, 50123 Köln</Field>
+        <Field name="phoneNo" abasType="GL70">05582 81 52 93</Field>
+      </Head>
+    </Record>
+    <Record id="70124">
+      <Head>
+        <Field name="swd" abasType="SWK0">MAYER</Field>
+        <Field name="descr" abasType="GL45">Mayer und Söhne, Rastatt</Field>
+        <Field name="phoneNo" abasType="GL70">21 211 976 9684</Field>
+      </Head>
+    </Record>
+    <Record id="70126">
+      <Head>
+        <Field name="swd" abasType="SWK0">LANZ</Field>
+        <Field name="descr" abasType="GL45">Markus Lanz</Field>
+        <Field name="phoneNo" abasType="GL70">09961 85 41 62</Field>
+      </Head>
+    </Record>
+  </RecordSet>
+</ABASData>
