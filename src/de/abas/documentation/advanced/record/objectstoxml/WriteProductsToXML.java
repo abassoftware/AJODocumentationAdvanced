@@ -22,16 +22,56 @@ public class WriteProductsToXML extends AbstractAjoAccess {
 		writeProductsToXML.runClientProgram(args);
 	}
 
+	/**
+	 * Creates Field element within Head element.
+	 *
+	 * @param product The current product to get the field value from.
+	 * @param head The Head element to place the Field element within.
+	 * @param fieldName The name of the field.
+	 */
+	private void createFieldElement(Product product, Element head, String fieldName) {
+		// creates Field element
+		Element field = new Element("Field");
+		// adds attributes to Field element
+		field.setAttribute("name", fieldName);
+		field.setAttribute("abasType", Product.META.getField(fieldName).getErpType());
+		// adds content to Field element
+		field.setText(product.getString(fieldName));
+		// places Field element within Head element
+		head.addContent(field);
+	}
+
+	/**
+	 * Creates Field element within Row element.
+	 *
+	 * @param row The current row of the current product to get the field value
+	 * from.
+	 * @param rowElement The Row element to place the Field element within.
+	 * @param fieldName The name of the field.
+	 */
+	private void createFieldElement(Row row, Element rowElement, String fieldName) {
+		// creates Field element
+		Element field = new Element("Field");
+		// adds attributes to Field element
+		field.setAttribute("name", fieldName);
+		field.setAttribute("abasType", Product.Row.META.getField(fieldName)
+				.getErpType());
+		// adds content to Field element
+		field.setText(row.getString(fieldName));
+		// places Field element within Row element
+		rowElement.addContent(field);
+	}
+
 	@Override
 	public void run(String[] args) {
 		FileOutputStream fileOutputStream = null;
 		// database context
 		DbContext ctx = getDbContext();
 		// future name and location of XML file
-		String xmlFile = "C:/Users/abas/Documents/Products.xml";
+		String xmlFile =
+				"src/de/abas/documentation/advanced/record/objectstoxml/Products.xml";
 		// selects all products
-		SelectionBuilder<Product> selection =
-				SelectionBuilder.create(Product.class);
+		SelectionBuilder<Product> selection = SelectionBuilder.create(Product.class);
 		Query<Product> query = ctx.createQuery(selection.build());
 		try {
 			// creates root element ABASData
@@ -42,10 +82,10 @@ public class WriteProductsToXML extends AbstractAjoAccess {
 			Element recordSet = new Element("RecordSet");
 			// adds attributes to RecordSet element
 			recordSet.setAttribute("action", "update");
-			recordSet.setAttribute("database", String.valueOf(query.execute()
-					.get(0).getDBNo().getCode()));
-			recordSet.setAttribute("group", String.valueOf(query.execute().get(
-					0).getGrpNo()));
+			recordSet.setAttribute("database",
+					String.valueOf(query.execute().get(0).getDBNo().getCode()));
+			recordSet.setAttribute("group",
+					String.valueOf(query.execute().get(0).getGrpNo()));
 			// places RecordSet element within ABASData element
 			abasData.addContent(recordSet);
 			for (Product product : query) {
@@ -70,8 +110,8 @@ public class WriteProductsToXML extends AbstractAjoAccess {
 						// creates Row element
 						Element rowElement = new Element("Row");
 						// adds attribute to Row element
-						rowElement.setAttribute("number", String.valueOf(row
-								.getRowNo()));
+						rowElement.setAttribute("number",
+								String.valueOf(row.getRowNo()));
 						// places Row element within Record element
 						record.addContent(rowElement);
 						// creates all Field elements
@@ -81,8 +121,7 @@ public class WriteProductsToXML extends AbstractAjoAccess {
 				}
 			}
 			// instantiates XMLOutputter using the pretty formatting
-			XMLOutputter xmlOutputter =
-					new XMLOutputter(Format.getPrettyFormat());
+			XMLOutputter xmlOutputter = new XMLOutputter(Format.getPrettyFormat());
 			// instantiates FileOutputStream for the previously defined future
 			// name
 			// and location of the XML file
@@ -102,53 +141,9 @@ public class WriteProductsToXML extends AbstractAjoAccess {
 				}
 			}
 			catch (IOException e) {
-				ctx.out()
-				.println("An IO exception occurred: " + e.getMessage());
+				ctx.out().println("An IO exception occurred: " + e.getMessage());
 			}
 		}
-	}
-
-	/**
-	 * Creates Field element within Head element.
-	 *
-	 * @param product The current product to get the field value from.
-	 * @param head The Head element to place the Field element within.
-	 * @param fieldName The name of the field.
-	 */
-	private void createFieldElement(Product product, Element head,
-			String fieldName) {
-		// creates Field element
-		Element field = new Element("Field");
-		// adds attributes to Field element
-		field.setAttribute("name", fieldName);
-		field.setAttribute("abasType", Product.META.getField(fieldName)
-				.getErpType());
-		// adds content to Field element
-		field.setText(product.getString(fieldName));
-		// places Field element within Head element
-		head.addContent(field);
-	}
-
-	/**
-	 * Creates Field element within Row element.
-	 *
-	 * @param row The current row of the current product to get the field value
-	 * from.
-	 * @param rowElement The Row element to place the Field element within.
-	 * @param fieldName The name of the field.
-	 */
-	private void createFieldElement(Row row, Element rowElement,
-			String fieldName) {
-		// creates Field element
-		Element field = new Element("Field");
-		// adds attributes to Field element
-		field.setAttribute("name", fieldName);
-		field.setAttribute("abasType", Product.Row.META.getField(fieldName)
-				.getErpType());
-		// adds content to Field element
-		field.setText(row.getString(fieldName));
-		// places Field element within Row element
-		rowElement.addContent(field);
 	}
 
 }

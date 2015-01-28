@@ -25,7 +25,9 @@ public class CreateNewProductsFromXML extends AbstractAjoAccess {
 	public void run(String[] args) {
 		ProductEditor productEditor = null;
 		// path of XML file
-		String xmlFile = "C:/Users/abas/Documents/New Products.xml";
+		String xmlFile =
+				"src/de/abas/documentation/advanced/record/"
+						+ "objectsfromxml/New Products.xml";
 		try {
 			// instantiates SAXBuilder
 			SAXBuilder saxBuilder = new SAXBuilder();

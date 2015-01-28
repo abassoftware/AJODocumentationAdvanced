@@ -24,7 +24,8 @@ public class ReadFromXML extends AbstractAjoAccess {
 		DbContext context = getDbContext();
 		// path of XML file
 		String xmlFile =
-				"C:/Users/jasc/Documents/ABAS/AJO/Schulungsunterlage/example.xml";
+				"src/de/abas/documentation/advanced/record/"
+						+ "objectsfromxml/Example.xml";
 		try {
 			// instantiates SAXBuilder
 			SAXBuilder saxBuilder = new SAXBuilder();
@@ -59,8 +60,7 @@ public class ReadFromXML extends AbstractAjoAccess {
 					// value
 					Attribute name = field.getAttribute("name");
 					context.out().println(" Attribute name: " + name.getName());
-					context.out().println(
-							"  Attribute value: " + name.getValue());
+					context.out().println("  Attribute value: " + name.getValue());
 					// gets and prints the Field-tag's value
 					context.out().println("   Tag value: " + field.getValue());
 				}

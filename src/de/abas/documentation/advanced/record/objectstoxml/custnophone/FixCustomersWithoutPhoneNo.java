@@ -15,6 +15,69 @@ public class FixCustomersWithoutPhoneNo extends AbstractAjoAccess {
 		fixCustomersWithoutPhoneNo.runClientProgram(args);
 	}
 
+	/**
+	 * Gets name and location of TXT file to get phone numbers from according to
+	 * whether the application runs in server or client mode.
+	 *
+	 * @return The name and location of the TXT file
+	 */
+	private String getTXTFile() {
+		// future name and location of XML file
+		String phoneNumbersTXT = "";
+		if (isClientMode()) {
+			phoneNumbersTXT =
+					"src/de/abas/documentation/advanced/record/objectstoxml/"
+							+ "custnophone/PhoneNumbers.txt";
+		}
+		else if (isServerMode()) {
+			phoneNumbersTXT =
+					"/java/projects/AJODocumentationAdvanced/src/de/abas/documentation/"
+							+ "advanced/record/objectstoxml/custnophone/PhoneNumbers.txt";
+		}
+		return phoneNumbersTXT;
+	}
+
+	/**
+	 * Gets name and location of XML file according to whether the application
+	 * runs in server or client mode.
+	 *
+	 * @return The name and location of the XML file as String.
+	 */
+	private String getXMLFile() {
+		// future name and location of XML file
+		String xmlFile = "";
+		if (isClientMode()) {
+			xmlFile =
+					"src/de/abas/documentation/advanced/record/objectstoxml/"
+							+ "custnophone/CustomersWithoutPhoneNo.xml";
+		}
+		else if (isServerMode()) {
+			xmlFile =
+					"java/projects/AJODocumentationAdvanced/src/de/abas/documentation/"
+							+ "advanced/record/objectstoxml/custnophone/"
+							+ "CustomersWithoutPhoneNo.xml";
+		}
+		return xmlFile;
+	}
+
+	/**
+	 * Checks whether the application is running in server mode.
+	 *
+	 * @return True is server mode.
+	 */
+	private boolean isClientMode() {
+		return getMode().equals(ContextMode.CLIENT_MODE.toString());
+	}
+
+	/**
+	 * Checks whether the application is running in client mode.
+	 *
+	 * @return True if client mode.
+	 */
+	private boolean isServerMode() {
+		return getMode().equals(ContextMode.SERVER_MODE.toString());
+	}
+
 	@Override
 	public void run(String[] args) {
 		// database context
@@ -26,8 +89,7 @@ public class FixCustomersWithoutPhoneNo extends AbstractAjoAccess {
 			new WriteCustomersToXML().createXMLFile(ctx, xmlFile);
 			// displays success message
 			ctx.out().println("XML file was created!");
-			new AddPhoneNumbers()
-					.addPhoneNumbersToXML(xmlFile, phoneNumbersTXT);
+			new AddPhoneNumbers().addPhoneNumbersToXML(xmlFile, phoneNumbersTXT);
 			// displays success message
 			ctx.out().println("Phone numbers successfully added!");
 			if (isClientMode()) {
@@ -50,14 +112,9 @@ public class FixCustomersWithoutPhoneNo extends AbstractAjoAccess {
 				// within
 				// XML file.
 				error =
-						new ImportXML()
-				.importXMLInClientMode(
-						"hades",
-						"jasc",
-						"secure",
-						true,
-						"/u1/jasc/erp/win/tmp/CustomersWithoutPhoneNo.xml",
-						"/u1/jasc/erp", "sy", true);
+						new ImportXML().importXMLInClientMode("host", "client",
+								"rootpwd", true, xmlFile, "path/to/client",
+								"clientpwd", true);
 			}
 			else if (isServerMode()) {
 				new ImportXML().importXMLInServerMode(xmlFile, true);
@@ -84,60 +141,6 @@ public class FixCustomersWithoutPhoneNo extends AbstractAjoAccess {
 			ctx.out().println(
 					"An AddPhoneNumber-Exception occurred: " + e.getMessage());
 		}
-	}
-
-	/**
-	 * Gets name and location of TXT file to get phone numbers from according to
-	 * whether the application runs in server or client mode.
-	 *
-	 * @return The name and location of the TXT file
-	 */
-	private String getTXTFile() {
-		// future name and location of XML file
-		String phoneNumbersTXT = "";
-		if (isClientMode()) {
-			phoneNumbersTXT = "//client path to tmp/PhoneNumbers.txt";
-		}
-		else if (isServerMode()) {
-			phoneNumbersTXT = "win/tmp/PhoneNumbers.txt";
-		}
-		return phoneNumbersTXT;
-	}
-
-	/**
-	 * Gets name and location of XML file according to whether the application
-	 * runs in server or client mode.
-	 *
-	 * @return The name and location of the XML file as String.
-	 */
-	private String getXMLFile() {
-		// future name and location of XML file
-		String xmlFile = "";
-		if (isClientMode()) {
-			xmlFile = "//client path to tmp/CustomersWithoutPhoneNo.xml";
-		}
-		else if (isServerMode()) {
-			xmlFile = "win/tmp/CustomersWithoutPhoneNo.xml";
-		}
-		return xmlFile;
-	}
-
-	/**
-	 * Checks whether the application is running in server mode.
-	 *
-	 * @return True is server mode.
-	 */
-	private boolean isClientMode() {
-		return getMode().equals(ContextMode.CLIENT_MODE.toString());
-	}
-
-	/**
-	 * Checks whether the application is running in client mode.
-	 *
-	 * @return True if client mode.
-	 */
-	private boolean isServerMode() {
-		return getMode().equals(ContextMode.SERVER_MODE.toString());
 	}
 
 }
