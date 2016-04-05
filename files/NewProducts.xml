@@ -20,16 +20,14 @@
                 <Field name="packDimWidth">92.67</Field>
                 <Field name="packDimHeight">21.96</Field>
             </Head>
-        </Record>
-        <Record>
-            <Head>
-                <Field name="swd">CONTAX</Field>
-                <Field name="descrOperLang">Contax</Field>
-                <Field name="salesPrice">8.75</Field>
-                <Field name="packDimLength">35.99</Field>
-                <Field name="packDimWidth">98.83</Field>
-                <Field name="packDimHeight">91.64</Field>
-            </Head>
+            <Row rowNo="1">
+                <Field name="prodListElem">PLATE</Field>
+                <Field name="elemQty">6.0</Field>
+            </Row>
+            <Row rowNo="2">
+                <Field name="prodListElem">CUP</Field>
+                <Field name="elemQty">6.0</Field>
+            </Row>
         </Record>
         <Record>
             <Head>
@@ -40,9 +38,17 @@
                 <Field name="packDimWidth">93.39</Field>
                 <Field name="packDimHeight">74.98</Field>
             </Head>
-            <Row rowOp="+">
-                <Field name="prodListElem">10146</Field>
+            <Row rowNo="1">
+                <Field name="prodListElem">DESK</Field>
                 <Field name="elemQty">1.0</Field>
+            </Row>
+            <Row rowNo="2">
+                <Field name="prodListElem">CABLETUN</Field>
+                <Field name="elemQty">5.0</Field>
+            </Row>
+            <Row rowNo="3">
+                <Field name="prodListElem">BOX</Field>
+                <Field name="elemQty">2.0</Field>
             </Row>
         </Record>
     </RecordSet>

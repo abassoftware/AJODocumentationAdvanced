@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ABASData>
+	<RecordSet action="new" database="0" group="1">
+		<Record>
+			<Head>
+				<Field name="swd">PLANET</Field>
+				<Field name="addr">Planet Profit</Field>
+				<Field name="street">Wallstrasse 18</Field>
+				<Field name="zipCode">53547</Field>
+				<Field name="town">Dattenberg</Field>
+				<Field name="ctryCode">D</Field>
+				<Field name="phoneNo">02638 55 13 61</Field>
+			</Head>
+		</Record>
+		<Record>
+			<Head>
+				<Field name="swd">MISSIONG</Field>
+				<Field name="addr">Mission G</Field>
+				<Field name="street">95, Chemin des Bateliers</Field>
+				<Field name="zipCode">61000</Field>
+				<Field name="town">Alençon</Field>
+				<Field name="ctryCode">F</Field>
+				<Field name="phoneNo">02.51.38.83.52</Field>
+			</Head>
+		</Record>
+	</RecordSet>
+</ABASData>

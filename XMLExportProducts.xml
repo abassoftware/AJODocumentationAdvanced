@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ABASData>
+  <RecordSet action="export" database="2" group="1">
+    <Record>
+      <Head>
+        <Field name="idno" abasType="NK2">10053</Field>
+        <Field name="swd" abasType="SWK2">BADEMANTEL</Field>
+        <Field name="descrOperLang" abasType="GL32">Bademantel</Field>
+        <Field name="salesPrice" abasType="R7.2">38.00</Field>
+      </Head>
+      <Row number="1">
+        <Field name="productListElem" abasType="VPKS1">(6447,2,0)</Field>
+        <Field name="elemDescr" abasType="VPKT1">(6447,2,0)</Field>
+        <Field name="elemQty" abasType="M4.4">4.0000</Field>
+        <Field name="sparePartTab" abasType="B">0</Field>
+      </Row>
+      <Row number="2">
+        <Field name="productListElem" abasType="VPKS1">(165,7,0)</Field>
+        <Field name="elemDescr" abasType="VPKT1">(165,7,0)</Field>
+        <Field name="elemQty" abasType="M4.4">1.0000</Field>
+        <Field name="sparePartTab" abasType="B">0</Field>
+      </Row>
+      <Row number="3">
+        <Field name="productListElem" abasType="VPKS1">(6446,2,0)</Field>
+        <Field name="elemDescr" abasType="VPKT1">(6446,2,0)</Field>
+        <Field name="elemQty" abasType="M4.4">2.0000</Field>
+        <Field name="sparePartTab" abasType="B">0</Field>
+      </Row>
+      <Row number="4">
+        <Field name="productListElem" abasType="VPKS1">(166,7,0)</Field>
+        <Field name="elemDescr" abasType="VPKT1">(166,7,0)</Field>
+        <Field name="elemQty" abasType="M4.4">1.0000</Field>
+        <Field name="sparePartTab" abasType="B">0</Field>
+      </Row>
+    </Record>
+    <Record>
+      <Head>
+        <Field name="idno" abasType="NK2">10054</Field>
+        <Field name="swd" abasType="SWK2">SAUNATUCH</Field>
+        <Field name="descrOperLang" abasType="GL32">Saunatuch</Field>
+        <Field name="salesPrice" abasType="R7.2">12.00</Field>
+      </Head>
+      <Row number="1">
+        <Field name="productListElem" abasType="VPKS1">(6447,2,0)</Field>
+        <Field name="elemDescr" abasType="VPKT1">(6447,2,0)</Field>
+        <Field name="elemQty" abasType="M4.4">1.9000</Field>
+        <Field name="sparePartTab" abasType="B">0</Field>
+      </Row>
+      <Row number="2">
+        <Field name="productListElem" abasType="VPKS1">(165,7,0)</Field>
+        <Field name="elemDescr" abasType="VPKT1">(165,7,0)</Field>
+        <Field name="elemQty" abasType="M4.4">1.0000</Field>
+        <Field name="sparePartTab" abasType="B">0</Field>
+      </Row>
+      <Row number="3">
+        <Field name="productListElem" abasType="VPKS1">(6446,2,0)</Field>
+        <Field name="elemDescr" abasType="VPKT1">(6446,2,0)</Field>
+        <Field name="elemQty" abasType="M4.4">0.9000</Field>
+        <Field name="sparePartTab" abasType="B">0</Field>
+      </Row>
+      <Row number="4">
+        <Field name="productListElem" abasType="VPKS1">(166,7,0)</Field>
+        <Field name="elemDescr" abasType="VPKT1">(166,7,0)</Field>
+        <Field name="elemQty" abasType="M4.4">1.0000</Field>
+        <Field name="sparePartTab" abasType="B">0</Field>
+      </Row>
+    </Record>
+  </RecordSet>
+</ABASData>

@@ -9,7 +9,6 @@ import de.abas.eks.jfop.remote.FOPSessionContext;
 import de.abas.erp.db.DbContext;
 import de.abas.erp.db.DbMessage;
 import de.abas.erp.db.MessageListener;
-import de.abas.erp.db.util.ContextHelper;
 
 /**
  * Utility method for getting the client and/or server context.
@@ -46,44 +45,7 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 		}
 	}
 
-	public enum Status {
-		/**
-		 * Status enumeration.
-		 *
-		 * @author abas Software AG
-		 *
-		 */
-		UNDEFINED {
-			@Override
-			public String toString() {
-				return "";
-			}
-		},
-		OK_MODE {
-
-			@Override
-			public String toString() {
-				return "ok-mode";
-			}
-
-		},
-		ERROR_MODE {
-
-			@Override
-			public String toString() {
-				return "error-mode";
-			}
-		}
-	}
-
-	// define EDP connection properties
-	private String hostname = "schulung";
-	private String mandant = "i7erp4";
-
-	private String password = "sy";
-
-	private int port = 6550;
-
+	private ConnectionProvider connectionProvider = new ConnectionProvider();
 	private FileWriter fileWriterLogging;
 
 	// Initialize DbContext
@@ -91,8 +53,7 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	private ContextMode mode = ContextMode.UNDEFINED;
 
 	/**
-	 * Adds a default message listener. Gets all text, status and error
-	 * messages.
+	 * Adds a default message listener. Gets all text, status and error messages.
 	 */
 	public void addDefaultMessageListener() {
 		getDbContext().addMessageListener(new MessageListener() {
@@ -106,37 +67,20 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	}
 
 	/**
-	 * Enables EDP logging. Creates a log file (name is class name).
-	 */
-	public final void enableLogging() {
-		enableLogging(getClass().getSimpleName() + ".log");
-	}
-
-	/**
-	 * Enables EDP logging. Creates a log file (name as defined in parameter).
-	 *
-	 * @param fileName
-	 *            Name of log file.
-	 */
-	public void enableLogging(String fileName) {
-		try {
-			fileWriterLogging = new FileWriter(fileName);
-			getDbContext().setLogger(fileWriterLogging);
-		} catch (IOException e) {
-			getDbContext().out().println(e.getMessage());
-		}
-	}
-
-	/**
 	 * Gets the database context. Create a client context if dbContext == null
 	 *
 	 * @return The database context.
 	 */
 	public DbContext getDbContext() {
 		if (dbContext == null) {
-			dbContext = ContextHelper.createClientContext(hostname, port,
-					mandant, password, this.getClass().getSimpleName());
+			dbContext =
+					connectionProvider.createDbContext(this.getClass()
+							.getSimpleName());
 			mode = ContextMode.CLIENT_MODE;
+			if (connectionProvider.edpLog) {
+				enableLogging();
+			}
+			addDefaultMessageListener();
 		}
 		return dbContext;
 	}
@@ -147,7 +91,7 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	 * @return The host name.
 	 */
 	public String getHostname() {
-		return hostname;
+		return connectionProvider.hostname;
 	}
 
 	/**
@@ -156,7 +100,7 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	 * @return The client.
 	 */
 	public String getMandant() {
-		return mandant;
+		return connectionProvider.mandant;
 	}
 
 	/**
@@ -174,7 +118,7 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	 * @return The port.
 	 */
 	public int getPort() {
-		return port;
+		return connectionProvider.port;
 	}
 
 	/**
@@ -182,7 +126,7 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	 *
 	 * @param args
 	 */
-	public abstract void run(String[] args);
+	public abstract int run(String[] args);
 
 	/**
 	 * Runs program in client mode. Creates client context if dbContext==null
@@ -201,64 +145,8 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 			throws FOPException {
 		dbContext = fopSessionContext.getDbContext();
 		mode = ContextMode.SERVER_MODE;
-		run(args);
-		return 0;
-	}
-
-	/**
-	 * Sets the host name if client context is running.
-	 *
-	 * @param hostname
-	 *            The host name.
-	 */
-	public void setHostname(String hostname) {
-		if (isClientContextRunning()) {
-			this.hostname = hostname;
-			dbContext.close();
-			dbContext = null;
-		}
-	}
-
-	/**
-	 * Sets the client if client context is running.
-	 *
-	 * @param mandant
-	 *            The client.
-	 */
-	public void setMandant(String mandant) {
-		if (isClientContextRunning()) {
-			this.mandant = mandant;
-			dbContext.close();
-			dbContext = null;
-		}
-	}
-
-	/**
-	 * Sets the password if client context is running.
-	 *
-	 * @param password
-	 *            The password.
-	 */
-	public void setPassword(String password) {
-		if (isClientContextRunning()) {
-			this.password = password;
-			dbContext.close();
-			dbContext = null;
-		}
-	}
-
-	/**
-	 * Sets the port if client context is running.
-	 *
-	 * @param port
-	 *            The port.
-	 */
-	public void setPort(int port) {
-		if (isClientContextRunning()) {
-			this.port = port;
-			dbContext.close();
-			dbContext = null;
-		}
+		addDefaultMessageListener();
+		return run(args);
 	}
 
 	/**
@@ -268,9 +156,11 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 		if (null != fileWriterLogging) {
 			try {
 				fileWriterLogging.close();
-			} catch (IOException e) {
+			}
+			catch (IOException e) {
 				getDbContext().out().println(e.getMessage());
-			} finally {
+			}
+			finally {
 				fileWriterLogging = null;
 			}
 		}
@@ -278,18 +168,24 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	}
 
 	/**
-	 * Checks whether the client context is running.
-	 *
-	 * @return true -> client context is running, false -> client context is not
-	 *         running
+	 * Enables EDP logging. Creates a log file (name is class name).
 	 */
-	private boolean isClientContextRunning() {
-		if (mode.equals(ContextMode.CLIENT_MODE)) {
-			return true;
-		} else {
-			dbContext.out().println(
-					"No Client-Mode running -> parameter may not be changed");
-			return false;
+	private final void enableLogging() {
+		enableLogging(getClass().getSimpleName() + ".log");
+	}
+
+	/**
+	 * Enables EDP logging. Creates a log file (name as defined in parameter).
+	 *
+	 * @param fileName Name of log file.
+	 */
+	private void enableLogging(String fileName) {
+		try {
+			fileWriterLogging = new FileWriter(fileName);
+			getDbContext().setLogger(fileWriterLogging);
+		}
+		catch (IOException e) {
+			getDbContext().out().println(e.getMessage());
 		}
 	}
 }
